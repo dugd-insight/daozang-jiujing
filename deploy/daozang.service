@@ -1,0 +1,17 @@
+# 道藏九经 · systemd 服务示例
+# 放到 /etc/systemd/system/daozang.service 后:
+#   systemctl daemon-reload && systemctl enable --now daozang
+[Unit]
+Description=Daozang Jiujing Static Site (Node)
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/daozang
+ExecStart=/usr/bin/node /opt/daozang/server.js --port 8123 --host 0.0.0.0
+Restart=on-failure
+RestartSec=3
+Environment=NODE_ENV=production
+
+[Install]
+WantedBy=multi-user.target

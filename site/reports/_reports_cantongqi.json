@@ -1,0 +1,184 @@
+{
+ "kind": "article",
+ "title": "《周易参同契》全书精读",
+ "summary": "东汉魏伯阳借《周易》卦爻象数与黄老之学的炉火炼丹原理，以乾坤坎离四卦为框架、月体纳甲与十二消息卦为火候，统摄阴阳五行与内丹修炼，奠定万古丹经王地位。",
+ "thesis": "丹道以易理为纲纪，乾坤为门户、坎离为轴心，通过卦爻消息与日月运行把握阴阳进退，以同类相须、金水还丹实现性命双修。",
+ "arguments": [
+  {
+   "claim": "乾坤坎离四卦是丹道宇宙论的根本框架",
+   "evidence": "首章以乾坤为众卦父母，坎离为运毂正轴，四卦如橐籥覆冒阴阳，配合律历纪度数。",
+   "quote": "乾坤者，易之門戶，眾卦之父母。坎離匡廓，運轂正軸，牝牡四卦，以為橐籥。",
+   "source": "大易總敘章第一"
+  },
+  {
+   "claim": "日月悬象与纳甲法揭示一月火候进退",
+   "evidence": "晦至朔旦震来受符，三日震动、八日兑行、三五乾成，以八卦纳甲配月相盈亏，定炼丹采药之机。",
+   "quote": "晦至朔旦，震來受符。當斯之際，天地媾其精，日月相擔持。",
+   "source": "日月懸象章第三"
+  },
+  {
+   "claim": "炼己立基以安静虚无、内照形躯为要",
+   "evidence": "闭兑固灵株、温养子珠，黄中通理，强调先天一炁掩蔽于内而世人莫知。",
+   "quote": "內以養己，安靜虛無。原本隱明，內照形軀。閉塞其兌，築固靈株。",
+   "source": "煉己立基章第六"
+  },
+  {
+   "claim": "龙虎金水必须同类相须、坎离交媾",
+   "evidence": "上弦兑八下弦艮八合十六两为一斤，金水互藏、子母相抱，异类杂性则万败。",
+   "quote": "上弦兌數八，下弦艮亦八，兩弦合其精，乾坤體乃成。二八應一斤，易道正不傾。",
+   "source": "龍虎兩弦章第九"
+  },
+  {
+   "claim": "二土全功在于戊己合和五行四象",
+   "evidence": "子午数合三、戊己称五，三五和谐则八石归纪，金砂入五内可返老还童。",
+   "quote": "子午數合三，戊己號稱五。三五既和諧，八石正綱紀。",
+   "source": "二土全功章第十一"
+  },
+  {
+   "claim": "鼎器药物火候皆循十二消息卦周流",
+   "evidence": "朔旦复卦始阳，历临泰大壮夬乾姤遁否观剥坤，终坤复始如环无端，匹配十二月律。",
+   "quote": "朔旦為復，陽氣始通。……終坤復始，如復連環。帝王承御，千載常存。",
+   "source": "爻變功用章第十九"
+  }
+ ],
+ "quotes": [
+  {
+   "text": "坎戊月精，離己日光，日月為易，剛柔相當，土旺四季，羅絡始終，青赤黑白，各居一方，皆秉中宮，戊己之功。",
+   "context": "说明坎离二用无爻位而周流六虚，戊己土为四象归宗之中枢。",
+   "source": "乾坤設位章第二"
+  },
+  {
+   "text": "知白守黑，神明自來，白者金精，黑者水基。水者道樞，去數名一。",
+   "context": "点出铅黑内怀金华、外黑内白，是还丹的根本药物。",
+   "source": "明兩知竅章第七"
+  },
+  {
+   "text": "金入於猛火，色不奪精光。……金復其故性，威光鼎乃熺。",
+   "context": "以金性不坏比喻金丹不灭，金返归母体即还丹之义。",
+   "source": "金返歸性章第十"
+  },
+  {
+   "text": "耳目口三寶，閉門無發通。真人潛深淵，浮游守規中。",
+   "context": "外三宝关闭则内真潜藏，是内丹炼己的关键功夫。",
+   "source": "關鍵三寶章第二十二"
+  }
+ ],
+ "concepts": [
+  {
+   "term": "坎离匡廓",
+   "explanation": "以乾坤定上下之位，坎离如车轴运转于中，成为万物变化的动力核心。"
+  },
+  {
+   "term": "纳甲",
+   "explanation": "将八卦配十干，以月相盈亏定震兑乾巽艮坤的方位与时辰，用于火候进退。"
+  },
+  {
+   "term": "二八一斤",
+   "explanation": "上弦兑八数与下弦艮八数合十六两，象征阴阳平衡、药物齐等。"
+  },
+  {
+   "term": "黄芽",
+   "explanation": "铅中精华为黄芽，是制伏河上姹女（汞）的根基，指先天一炁初生之象。"
+  },
+  {
+   "term": "十二消息卦",
+   "explanation": "复临泰大壮夬乾姤遁否观剥坤，配十二月阴阳消长，作为炼丹火候的历法依据。"
+  }
+ ],
+ "questions": [
+  "《参同契》将日月悬象与人体修炼对应，其取象比类的依据是否存在循环论证？",
+  "以坎离为药物、戊己为土功的模型，如何避免将内丹火候完全玄学化？",
+  "自叙章自称‘委时去害，依托丘山’，与神仙长生的主题是否矛盾？如何看待魏伯阳的出世姿态？",
+  "历代注家对‘金丹’的理解分歧（外丹炉火还是内丹精气）如何影响对全书主旨的判定？"
+ ],
+ "structure": [],
+ "chapters": [],
+ "citations": [],
+ "meta": {
+  "source": "/root/dugd_8/cantongqi.txt",
+  "sourceKind": "file",
+  "chars": 8195,
+  "chunks": 1,
+  "depth": "deep",
+  "estimate": {
+   "chars": 8195,
+   "modes": [
+    {
+     "mode": "quick",
+     "note": "单次调用，输入截断至 30000 字",
+     "calls": 1,
+     "inputTokens": 5504,
+     "outputTokens": 2500,
+     "totalTokens": 8004,
+     "minutes": 6,
+     "minutesFormula": "（(5504+2500) ÷ 22.3 tok/s + 1 次 × 800ms）",
+     "estTokensPerSecond": 22.3,
+     "estLatencyPerCallMs": 800,
+     "calibrated": true
+    },
+    {
+     "mode": "deep",
+     "note": "短文单次调用",
+     "calls": 1,
+     "inputTokens": 5504,
+     "outputTokens": 4000,
+     "totalTokens": 9504,
+     "minutes": 7.1,
+     "minutesFormula": "（(5504+4000) ÷ 22.3 tok/s + 1 次 × 800ms）",
+     "estTokensPerSecond": 22.3,
+     "estLatencyPerCallMs": 800,
+     "calibrated": true
+    },
+    {
+     "mode": "book",
+     "note": "全书分 2 部分精读并汇总",
+     "calls": 3,
+     "inputTokens": 9778,
+     "outputTokens": 15000,
+     "totalTokens": 24778,
+     "minutes": 18.5,
+     "minutesFormula": "（(9778+15000) ÷ 22.3 tok/s + 3 次 × 800ms）",
+     "estTokensPerSecond": 22.3,
+     "estLatencyPerCallMs": 800,
+     "calibrated": true
+    },
+    {
+     "mode": "map",
+     "note": "短文单次知识地图",
+     "calls": 1,
+     "inputTokens": 5504,
+     "outputTokens": 5000,
+     "totalTokens": 10504,
+     "minutes": 7.9,
+     "minutesFormula": "（(5504+5000) ÷ 22.3 tok/s + 1 次 × 800ms）",
+     "estTokensPerSecond": 22.3,
+     "estLatencyPerCallMs": 800,
+     "calibrated": true
+    },
+    {
+     "mode": "feynman",
+     "note": "分 2 章 + 合并导图与复习计划 1 次",
+     "calls": 3,
+     "inputTokens": 9778,
+     "outputTokens": 15000,
+     "totalTokens": 24778,
+     "minutes": 18.5,
+     "minutesFormula": "（(9778+15000) ÷ 22.3 tok/s + 3 次 × 800ms）",
+     "estTokensPerSecond": 22.3,
+     "estLatencyPerCallMs": 800,
+     "calibrated": true
+    }
+   ],
+   "estTokensPerSecond": 22.3,
+   "estLatencyPerCallMs": 800,
+   "calibrated": true
+  },
+  "durationMs": 56356,
+  "stages": {
+   "resolveMs": 2,
+   "extractMs": 0,
+   "llmMs": 56355,
+   "calls": 1
+  }
+ }
+}

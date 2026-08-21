@@ -1,0 +1,7 @@
+services:
+  daozang:
+    build: .
+    container_name: daozang-jiujing
+    ports:
+      - "8123:8123"
+    restart: unless-stopped

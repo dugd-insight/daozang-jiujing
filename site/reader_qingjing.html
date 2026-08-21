@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>太上老君说常清静经 · 精校阅读版</title>
+<style>:root{--ink:#23201a;--paper:#f8f3e8;--paper2:#fdfaf3;--accent:#8a4a12;--note:#f0ead6;--noteLine:#b08a4a;--mark:#ffe08a;--key:#ffc46b;--dim:#7a7161}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Songti SC","Noto Serif SC","SimSun",serif;line-height:2.05;font-size:17px}
+.toolbar{position:sticky;top:0;z-index:20;background:#26221a;color:#f5efe0;padding:.55em 1.1em;font-size:.85em;display:flex;flex-wrap:wrap;gap:.6em 1.2em;align-items:center;box-shadow:0 2px 10px rgba(0,0,0,.35)}
+.toolbar .t{font-weight:700;color:#ffd98a}
+.toolbar a{color:#8fd0ff;text-decoration:none;border-bottom:1px dotted #8fd0ff}
+.toolbar a:hover{color:#fff}
+.toolbar button{background:#3a342a;color:#ffe9c0;border:1px solid #6a5a3a;border-radius:6px;padding:.3em .8em;cursor:pointer;font-size:.9em}
+.toolbar button:hover{filter:brightness(1.25)}
+.toolbar button.on{background:#6a3a10;border-color:#c08a3a}
+.wrap{max-width:44em;margin:0 auto;padding:1.6em 1.2em 6em}
+h1{text-align:center;font-size:1.65em;color:var(--accent);margin:.4em 0 .2em;letter-spacing:.08em}
+.sub{text-align:center;color:var(--dim);font-size:.85em;margin-bottom:1.6em}
+.legend{background:var(--paper2);border:1px solid #e2d5b8;border-radius:10px;padding:.9em 1.1em;font-size:.85em;color:#5c5342;margin:1.2em 0 1.8em;line-height:2.1}
+.legend mark{background:var(--mark);padding:0 3px;border-radius:3px}
+.legend .key-s{background:var(--key);color:#7a1c06;font-weight:700;padding:0 3px;border-radius:3px}
+.legend b{color:var(--accent)}
+.legend details{margin-top:.5em}
+.legend summary{cursor:pointer;color:#8a5a20;font-weight:600}
+.legend .phrases{color:#6a6048;font-size:.82em;line-height:1.9;max-height:12em;overflow-y:auto;border-top:1px dashed #d8cba0;margin-top:.4em;padding-top:.4em}
+.toc{background:var(--paper2);border:1px solid #e2d5b8;border-radius:10px;padding:1em 1.2em;margin:0 0 2em;font-size:.92em}
+.toc h3{margin:0 0 .6em;font-size:1em;color:var(--accent)}
+.toc a{display:inline-block;margin:.15em .8em .15em 0;color:#5a4a2a;text-decoration:none;border-bottom:1px dotted #b8a070}
+.toc a:hover{color:#c05a20}
+h2{color:var(--accent);font-size:1.22em;margin:2em 0 .7em;padding:.25em .6em;border-left:5px solid #c05a20;background:linear-gradient(90deg,#f3e7cf,#f8f3e8);border-radius:0 8px 8px 0;scroll-margin-top:60px}
+p{margin:.55em 0;text-align:justify}
+blockquote{border-left:4px solid #b8a070;background:var(--paper2);margin:1em 0;padding:.7em 1.1em;color:#5c5342;font-size:.92em;border-radius:0 8px 8px 0}
+mark{background:linear-gradient(180deg,transparent 45%,var(--mark) 45%);padding:0 2px;border-radius:2px;font-weight:600}
+.key{background:linear-gradient(180deg,transparent 38%,var(--key) 38%);color:#7a1c06;padding:0 2px;border-radius:2px;font-weight:700}
+b{color:#7a3c0a;font-weight:700}
+.note{margin:1em 0;background:var(--note);border-left:5px solid var(--noteLine);border-radius:0 10px 10px 0;padding:.7em 1em .7em 1.1em;font-size:.92em;color:#4a4234}
+.note .badge{display:inline-block;background:var(--noteLine);color:#fff;font-size:.7em;padding:.1em .55em;border-radius:99px;margin-bottom:.35em;letter-spacing:.1em}
+.inote{color:#7a6a4a;font-size:.86em;border-bottom:1px dashed #c0a878}
+.inote::before{content:'〔注：';color:#b08a4a}
+.inote::after{content:'〕';color:#b08a4a}
+.end{text-align:center;color:var(--dim);font-size:.9em;margin-top:3em;letter-spacing:.3em}
+.dl{font-size:.82em}
+hr{border:none;border-top:1px dashed #c9b98f;margin:2em 0}
+body.no-notes .note{display:none}
+body.no-notes .inote{display:none}
+@media (max-width:640px){body{font-size:15.5px}.toolbar{font-size:.78em}}
+</style>
+</head>
+<body>
+<div class="toolbar">
+  <span class="t">☯ 太上老君说常清静经 · 精校阅读版</span>
+  <button id="btnTg">切换到繁体原文</button>
+  <button id="btnNotes">隐藏注解</button>
+  <span class="dl">⬇ <a href="qingjingjing_simp.txt" download>简体全文 .txt</a> · <a href="qingjingjing.txt" download>繁体原文 .txt</a></span>
+</div>
+<div class="wrap">
+  <div id="body"></div>
+</div>
+<script>
+var SEGS = [{"t": "h1", "s": "太上老君说常清静经", "o": "太上老君说常清静经", "i": 0}, {"t": "q", "s": "道教最流行之短经，托太上老君所说，约四百字，言清静遣欲、内观澄心之道，为三教共尊之修心经典。", "o": "道教最流行之短经，托太上老君所说，约四百字，言清静遣欲、内观澄心之道，为三教共尊之修心经典。", "i": 1}, {"t": "p", "s": "历代注本有杜光庭注、白玉蟾注、侯善渊注等（注家多有修证）。经文后附<b>葛仙翁</b>传经语，述其授受源流。", "o": "历代注本有杜光庭注、白玉蟾注、侯善渊注等（注家多有修证）。经文后附<b>葛仙翁</b>传经语，述其授受源流。", "i": 2}, {"t": "note", "s": "注曰：《道德经》云：道之出口，淡乎其无味。视之不足见，听之不足闻，用之不可既。", "o": "注曰：《道德經》云：道之出口，淡乎其無味。視之不足見，聽之不足聞，用之不可既。", "i": 3}, {"t": "note", "s": "注曰：《神霄经》云：空洞无形，神炁为真。神非恍惚，炁非氤氲。神生万神，炁生万炁。万神归一，万炁合一。神为道机，炁为道枢，机变枢化，三界乃生。元始祖神，变生万真，元始祖炁，化生诸天。", "o": "注曰：《神霄經》云：空洞無形，神炁為真。神非恍惚，炁非氤氳。神生萬神，炁生萬炁。萬神歸一，萬炁合一。神為道機，炁為道樞，機變樞化，三界乃生。元始祖神，變生萬真，元始祖炁，化生諸天。", "i": 4}, {"t": "q", "s": "文本来源：中国哲学书电子化计划（ctext.org）《太上老君说常清静妙经》。", "o": "文本来源：中国哲学书电子化计划（ctext.org）《太上老君说常清静妙经》。", "i": 5}, {"t": "p", "s": "老君曰：<span class=\"key\">大道无形，生育天地</span>；<span class=\"key\">大道无情，运行日月</span>；<span class=\"key\">大道无名，长养万物</span>。吾不知其名，强名曰道。夫道者，有清有浊，有动有静。天清地浊，天动地静，男清女浊，男动女静。降本流末，而生万物。<mark>清者浊之源，静者动之基</mark>。<span class=\"key\">人能常清静，天地悉皆归</span>。夫人神好清而心扰之，人心好静而欲牵之。<mark>常能遣其欲而心自静，澄其心而神自清</mark>，自然<mark>六欲不生，三毒消灭</mark>。所以不能者，为心未澄、欲未遣也。能遣之者，<span class=\"key\">内观于心，心无其心；外观于形，形无其形；远观于物，物无其物</span>。<mark>三者既悟，唯见于空</mark>。<mark>观空亦空，空无所空</mark>。所空既无，无无亦无。<mark>无无既无，湛然常寂</mark>。<mark>寂无所寂，欲岂能生</mark>？<span class=\"key\">欲既不生，即是真静</span>。<mark>真常应物，真常得性</mark>。<span class=\"key\">常应常静，常清静矣</span>。如此<b>清静</b>，渐入真道。既入真道，名为得道。<mark>虽名得道，实无所得</mark>。为化众生，名为得道。能悟之者，可传圣道。", "o": "老君曰：<span class=\"key\">大道無形，生育天地</span>；<span class=\"key\">大道無情，運行日月</span>；<span class=\"key\">大道無名，長養萬物</span>。吾不知其名，強名曰道。夫道者，有清有濁，有動有靜。天清地濁，天動地靜，男清女濁，男動女靜。降本流末，而生萬物。<mark>清者濁之源，靜者動之基</mark>。<span class=\"key\">人能常清靜，天地悉皆歸</span>。夫人神好清而心擾之，人心好靜而慾牽之。<mark>常能遣其欲而心自靜，澄其心而神自清</mark>，自然六欲不生，<b>三毒</b>消滅。所以不能者，為心未澄、慾未遣也。能遣之者，<span class=\"key\">內觀於心，心無其心；外觀於形，形無其形；遠觀於物，物無其物</span>。<mark>三者既悟，唯見於空</mark>。<mark>觀空亦空，空無所空</mark>。所空既無，無無亦無。<mark>無無既無，湛然常寂</mark>。寂無所寂，慾豈能生？慾既不生，即是<b>真靜</b>。<mark>真常應物，真常得性</mark>。<span class=\"key\">常應常靜，常清靜矣</span>。如此<b>清靜</b>，漸入真道。既入真道，名為得道。<mark>雖名得道，實無所得</mark>。為化眾生，名為得道。能悟之者，可傳聖道。", "i": 6}, {"t": "note", "s": "注曰：《晋天文志》云：天圆如倚盖，地方如棋局。天盘一半在地上，半在地下。日月本东行，天西旋。《汉浑天仪》云：周天三百六十五度四分度之一。天体圆如弹九，北高南下，形如倚盖。北极出地上三十六度，南极入地下三十六度。南极去北极直径一百八十二度弱。其依天体隆曲，南极去北极一百八十二度强。正当天之中。南北二极中等之处，谓之赤道，去南北极各九十一度。春分日行赤道，夏至日行赤道之北二十度，去北极六十七度，去南极一百一十五度，谓之黑道。从夏至日以后，日渐南至，秋分还行赤道，与春分同。", "o": "注曰：《晉天文志》云：天圓如倚蓋，地方如棋局。天盤一半在地上，半在地下。日月本東行，天西旋。《漢渾天儀》云：周天三百六十五度四分度之一。天體圓如彈九，北高南下，形如倚蓋。北極出地上三十六度，南極入地下三十六度。南極去北極直徑一百八十二度弱。其依天體隆曲，南極去北極一百八十二度強。正當天之中。南北二極中等之處，謂之赤道，去南北極各九十一度。春分日行赤道，夏至日行赤道之北二十度，去北極六十七度，去南極一百一十五度，謂之黑道。從夏至日以後，日漸南至，秋分還行赤道，與春分同。", "i": 7}, {"t": "note", "s": "注曰：老子云：无名天地之始，有名万物之母。《易》曰：地道含弘光大，万物资生，鼓之以雷霆，润之以风雨。朱子云：元亨播群品，利贞固灵根。非诚谅无有，五性实斯存。", "o": "注曰：老子云：無名天地之始，有名萬物之母。《易》曰：地道含弘光大，萬物資生，鼓之以雷霆，潤之以風雨。朱子云：元亨播群品，利貞固靈根。非誠諒無有，五性實斯存。", "i": 8}, {"t": "p", "s": "老君曰：<mark>上士无争，下士好争</mark>；<mark>上德不德，下德执德</mark>。执著之者，不名道德。<mark>众生所以不得真道者，为有妄心</mark>。既有<b>妄心</b>，即惊其神。既惊其神，即著万物。既著万物，即生贪求。既生贪求，即是<b>烦恼</b>。<b>烦恼</b>妄想，忧苦身心，便遭浊辱，流浪生死，常沉苦海，永失真道。<mark>真常之道，悟者自得</mark>。<mark>得悟道者，常清静矣</mark>。", "o": "老君曰：<mark>上士無爭，下士好爭</mark>；<mark>上德不德，下德執德</mark>。執著之者，不名道德。眾生所以不得真道者，為有<b>妄心</b>。既有<b>妄心</b>，即驚其神。既驚其神，即著萬物。既著萬物，即生貪求。既生貪求，即是<b>煩惱</b>。<b>煩惱</b>妄想，憂苦身心，便遭濁辱，流浪生死，常沉苦海，永失真道。<mark>真常之道，悟者自得</mark>。<mark>得悟道者，常清靜矣</mark>。", "i": 9}, {"t": "note", "s": "注曰：太极左仙公云：无极者，与<b>大道</b>而沦化，为天地而立根，布炁于十方，抱道德之至淳，浩浩荡荡，不可名也。故老子谓之道，《春秋》谓之元，《易》谓之太极。张子谓，由炁化，有道之名。又云，由炁化，有天道、地道、人道之名。", "o": "注曰：太極左仙公云：無極者，與<b>大道</b>而淪化，為天地而立根，布炁於十方，抱道德之至淳，浩浩蕩蕩，不可名也。故老子謂之道，《春秋》謂之元，《易》謂之太極。張子謂，由炁化，有道之名。又云，由炁化，有天道、地道、人道之名。", "i": 10}, {"t": "note", "s": "注曰：陈子昂云：仲尼推太极，老子贵窈冥。西方金仙子，崇义乃无明。", "o": "注曰：陳子昂云：仲尼推太極，老子貴窈冥。西方金仙子，崇義乃無明。", "i": 11}, {"t": "h2", "s": "太上老君说常清静妙经", "o": "太上老君說常清靜妙經", "i": 12}, {"t": "p", "s": "仙人<b>葛仙翁</b>曰：吾得真道，曾诵此经万遍。此经是天人所习，不传<b>下士</b>。吾昔受之于东华帝君，束华帝君受之于金关帝君，金阙帝君受之于西王母，西王母皆口口相传，不记文字。吾今于世，书而录之。<b>上士</b>悟之，升为天官；中士得之，南官列仙；<b>下士</b>修之，在世长年。游行三界，升入金门。", "o": "仙人<b>葛仙翁</b>曰：吾得真道，曾誦此經萬遍。此經是天人所習，不傳<b>下士</b>。吾昔受之於東華帝君，束華帝君受之於金關帝君，金闕帝君受之於西王母，西王母皆口口相傳，不記文字。吾今於世，書而錄之。<b>上士</b>悟之，升為天官；中士得之，南官列仙；<b>下士</b>修之，在世長年。遊行三界，昇入金門。", "i": 13}, {"t": "note", "s": "注曰：《管子》云：虚而无形，谓之道。《汉律历志》云：太极元炁，函三为一。即天地人也。《列子》云：元炁轻清者为天，重浊者为地，冲和之炁为人。朱子云：天地之炁合，所遇寒暑、燥湿、风火胜复之变、之化。故人炁从之，万物化生，悉由三炁合散，生化无穷。悟真子云：道自虚无生一炁，便从一炁产阴阳。阴阳配合生三体，三体重生万物昌。", "o": "注曰：《管子》云：虛而無形，謂之道。《漢律歷志》云：太極元炁，函三為一。即天地人也。《列子》云：元炁輕清者為天，重濁者為地，沖和之炁為人。朱子云：天地之炁合，所遇寒暑、燥濕、風火勝復之變、之化。故人炁從之，萬物化生，悉由三炁合散，生化無窮。悟真子云：道自虛無生一炁，便從一炁產陰陽。陰陽配合生三體，三體重生萬物昌。", "i": 14}, {"t": "note", "s": "注曰：邵子云：无极而太极，冲漠未分。阳动阴静，只在太极里。阳动阴静，循环不穷。太极本体，只在阴阳裹。释氏云：水流元在海，月落不离天。一本作静者动之基。", "o": "注曰：邵子云：無極而太極，沖漠未分。陽動陰靜，只在太極裏。陽動陰靜，循環不窮。太極本體，只在陰陽裹。釋氏云：水流元在海，月落不離天。一本作靜者動之基。", "i": 15}, {"t": "p", "s": "左玄真人曰：学道之士，持诵此经者，即得十天善神拥护其人，然后玉符保神，金液链形，形神俱妙，与道合真。", "o": "左玄真人曰：學道之士，持誦此經者，即得十天善神擁護其人，然後玉符保神，金液鍊形，形神俱妙，與道合真。", "i": 16}, {"t": "note", "s": "注曰：《大洞经》云：人生天形。李少微云：我即天地，天地即我。刘天师云：道非欲虚，虚自归之。人能虚心，道自归之。玉谿子云：为甚此心关大造，只因元自道中来。", "o": "注曰：《大洞經》云：人生天形。李少微云：我即天地，天地即我。劉天師云：道非欲虛，虛自歸之。人能虛心，道自歸之。玉谿子云：為甚此心關大造，只因元自道中來。", "i": 17}, {"t": "note", "s": "注曰：玉谿子云：自道分为我之元神，我之元神即<b>大道</b>也。王鞵师云：心宁神灵，心荒神狂。孔子问于老聃：敢问至道？聃曰：疏沦于心，澡雪于精神。西王母云：声色不止神不清，思虑不止心不宁，心不宁兮神不灵，神不灵兮道不成。", "o": "注曰：玉谿子云：自道分為我之元神，我之元神即<b>大道</b>也。王鞵師云：心寧神靈，心荒神狂。孔子問於老聃：敢問至道？聃曰：疏淪於心，澡雪於精神。西王母云：聲色不止神不清，思慮不止心不寧，心不寧兮神不靈，神不靈兮道不成。", "i": 18}, {"t": "p", "s": "正一真人曰：人家有此经，悟解之者，灾障不干，众圣护门，神升上界，朝拜高。功满德就，相感帝君。诵持不退，身腾紫云。", "o": "正一真人曰：人家有此經，悟解之者，災障不干，眾聖護門，神升上界，朝拜高。功滿德就，相感帝君。誦持不退，身騰紫雲。", "i": 19}, {"t": "note", "s": "注曰：天猷真君曰：日月虽明，浮云盖之；江河虽清，沙石混之；人心虽静，嗜欲牵之。梓潼帝君云：白云本是无心物，风送悠然出岫中。", "o": "注曰：天猷真君曰：日月雖明，浮雲蓋之；江河雖清，沙石混之；人心雖靜，嗜欲牽之。梓潼帝君云：白雲本是無心物，風送悠然出岫中。", "i": 20}, {"t": "note", "s": "注曰：《了真经》云：寡欲心静，忘情累轻。老子云：其居也渊而静，其惟人心乎。《水火真经》云：欲从心起，息从心定。心息相依，息调心静。", "o": "注曰：《了真經》云：寡欲心靜，忘情累輕。老子云：其居也淵而靜，其惟人心乎。《水火真經》云：欲從心起，息從心定。心息相依，息調心靜。", "i": 21}];
+var root = document.getElementById('body');
+var simp = localStorage.getItem('gj-simp') !== '0';
+var showNotes = localStorage.getItem('gj-notes') !== '0';
+function render(){
+  var toc = '';
+  var html = '';
+  for (var i = 0; i < SEGS.length; i++){
+    var s = SEGS[i], t = simp ? s.s : s.o;
+    if (s.t === 'h2'){ html += '<h2 id="c' + i + '">' + t + '</h2>'; toc += '<a href="#c' + i + '">' + t + '</a>'; }
+    else if (s.t === 'q'){ html += '<blockquote>' + t + '</blockquote>'; }
+    else if (s.t === 'note'){ html += '<div class="note"><span class="badge">历代注解</span><div>' + t + '</div></div>'; }
+    else if (s.t === 'hr'){ html += '<hr>'; }
+    else if (s.t !== 'h1'){ html += '<p>' + t + '</p>'; }
+  }
+  html = '<h1>太上老君说常清静经</h1><p class="sub">大道无形 · 清静遣欲 · 附历代修证祖师注解（杜光庭/白玉蟾等注本传统）</p>'
+       + '<div class="legend">阅读说明：<span class="key-s">金底深红</span>=全书总诀（最核心）；<mark>橙底</mark>=关键句；<b>深棕加粗</b>=核心术语；右侧<b style="color:#8a6a3f">灰底竖线块</b>为历代有修证祖师注解，<b style="color:#b08a4a">〔注：…〕</b>为经文中内嵌注语。顶栏可<b>隐藏注解</b>只读原文，也可切换繁简。<details><summary>📋 查看本经高亮词库（21 条）</summary><div class="phrases">大道无形，生育天地，大道无情，运行日月，大道无名，长养万物，人能常清静，天地悉皆归，内观于心，心无其心；外观于形，形无其形；远观于物，物无其物，欲既不生，即是真静，常应常静，常清静矣，清者浊之源，静者动之基，常能遣其欲而心自静，澄其心而神自清，六欲不生，三毒消灭，三者既悟，唯见于空，观空亦空，空无所空，无无既无，湛然常寂，寂无所寂，欲岂能生，真常应物，真常得性，上士无争，下士好争，上德不德，下德执德，众生所以不得真道者，为有妄心，真常之道，悟者自得，虽名得道，实无所得，得悟道者，常清静矣</div></details></div>'
+       + '<div class="toc"><h3>章节目录</h3>' + toc + '</div>' + html;
+  root.innerHTML = html;
+}
+document.getElementById('btnTg').onclick = function(){
+  simp = !simp;
+  localStorage.setItem('gj-simp', simp ? '1' : '0');
+  this.textContent = simp ? '切换到繁体原文' : '切换到简体正文';
+  render();
+};
+document.getElementById('btnNotes').onclick = function(){
+  showNotes = !showNotes;
+  localStorage.setItem('gj-notes', showNotes ? '1' : '0');
+  document.body.classList.toggle('no-notes', !showNotes);
+  this.textContent = showNotes ? '隐藏注解' : '显示注解';
+  this.classList.toggle('on', !showNotes);
+};
+document.body.classList.toggle('no-notes', !showNotes);
+document.getElementById('btnNotes').textContent = showNotes ? '隐藏注解' : '显示注解';
+document.getElementById('btnNotes').classList.toggle('on', !showNotes);
+render();
+</script>
+</body>
+</html>

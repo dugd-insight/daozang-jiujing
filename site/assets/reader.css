@@ -1,0 +1,93 @@
+:root{--ink:#23201a;--paper:#f8f3e8;--paper2:#fdfaf3;--accent:#8a4a12;--note:#f0ead6;--noteLine:#b08a4a;--mark:#ffe08a;--key:#ffc46b;--dim:#7a7161}
+*{box-sizing:border-box;margin:0;padding:0}
+body{margin:0;background:
+  radial-gradient(900px 420px at 12% -6%, #f3e3bd 0%, transparent 60%),
+  radial-gradient(800px 400px at 95% 0%, #e9dcc3 0%, transparent 55%),
+  var(--paper);
+  color:var(--ink);font-family:"Songti SC","Noto Serif SC","SimSun",serif;line-height:2.05;font-size:17px}
+.toolbar{position:sticky;top:0;z-index:20;background:#26221a;color:#f5efe0;padding:.5em 1.1em;font-size:.85em;display:flex;flex-wrap:wrap;gap:.5em 1.1em;align-items:center;box-shadow:0 2px 10px rgba(0,0,0,.35)}
+.toolbar .t{font-weight:700;color:#ffd98a}
+.toolbar a{color:#8fd0ff;text-decoration:none;border-bottom:1px dotted #8fd0ff}
+.toolbar a:hover{color:#fff}
+.toolbar .cnt{color:#a8a88a;font-size:.85em}
+.toolbar button{background:#3a342a;color:#ffe9c0;border:1px solid #6a5a3a;border-radius:6px;padding:.3em .8em;cursor:pointer;font-size:.9em}
+.toolbar button:hover{filter:brightness(1.25)}
+.toolbar button.on{background:#6a3a10;border-color:#c08a3a}
+.toolbar .dl{font-size:.8em}
+.wrap{max-width:44em;margin:0 auto;padding:1.4em 1.2em 5em}
+h1{text-align:center;font-size:1.6em;color:var(--accent);margin:.3em 0 .2em;letter-spacing:.08em}
+h2.ch{color:var(--accent);font-size:1.25em;margin:1.2em 0 .7em;padding:.3em .7em;border-left:5px solid #c05a20;background:linear-gradient(90deg,#f3e7cf,#f8f3e8);border-radius:0 8px 8px 0}
+.sub{text-align:center;color:var(--dim);font-size:.85em;margin-bottom:1.4em}
+p{margin:.5em 0;text-align:justify}
+blockquote{border-left:4px solid #b8a070;background:var(--paper2);margin:1em 0;padding:.6em 1.1em;color:#5c5342;font-size:.92em;border-radius:0 8px 8px 0}
+mark{background:linear-gradient(180deg,transparent 45%,var(--mark) 45%);padding:0 2px;border-radius:2px;font-weight:600}
+.key{background:linear-gradient(180deg,transparent 38%,var(--key) 38%);color:#7a1c06;padding:0 2px;border-radius:2px;font-weight:700}
+b{color:#7a3c0a;font-weight:700}
+.note{margin:1em 0;background:var(--note);border-left:5px solid var(--noteLine);border-radius:0 10px 10px 0;padding:.6em 1em .6em 1.1em;font-size:.92em;color:#4a4234}
+.note .badge{display:inline-block;background:var(--noteLine);color:#fff;font-size:.7em;padding:.1em .55em;border-radius:99px;margin-bottom:.3em;letter-spacing:.1em}
+.inote{color:#7a6a4a;font-size:.86em;border-bottom:1px dashed #c0a878}
+.inote::before{content:'〔注：';color:#b08a4a}
+.inote::after{content:'〕';color:#b08a4a}
+.nav{display:flex;justify-content:space-between;gap:1em;margin:2.2em 0 0;padding-top:1em;border-top:1px dashed #c9b98f}
+.nav a{color:#8a5a20;text-decoration:none;border-bottom:1px dotted #b8a070;font-size:.92em}
+.nav a:hover{color:var(--red)}
+.nav .mid{flex:1;text-align:center;font-size:.85em;color:var(--dim)}
+.content-trad{display:none}
+body.trad .content-trad{display:block}
+body.trad .content-simp{display:none}
+body.no-notes .note{display:none}
+body.no-notes .inote{display:none}
+.end{text-align:center;color:var(--dim);font-size:.9em;margin-top:2.5em;letter-spacing:.3em}
+.pgno{display:block;text-align:center;font-size:.8em;color:#a09070;margin-top:.3em;letter-spacing:.2em}
+/* ============ 目录页（书封面风 · 居中） ============ */
+.tocpage{max-width:62em;padding-top:2.2em}
+.bookhead{text-align:center;padding:.4em 0 1.6em}
+.seal{width:82px;height:82px;line-height:82px;margin:0 auto .8em;border-radius:50%;background:radial-gradient(circle at 35% 28%,#d07430,#7a2a08);color:#f7e9c8;font-size:36px;box-shadow:0 12px 28px rgba(138,42,10,.32), inset 0 -5px 12px rgba(0,0,0,.25);border:2px solid #6a1e06;text-align:center}
+.bookhead h1{font-size:2.3em;letter-spacing:.12em;margin:0;background:linear-gradient(90deg,#5a3a10,#b8860b 45%,#8a2a0a);-webkit-background-clip:text;background-clip:text;color:transparent}
+.bookhead .sub{color:var(--dim);font-size:.92em;margin:.6em 0 0;letter-spacing:.12em}
+.stats{display:flex;justify-content:center;gap:.7em;margin-top:1.2em;flex-wrap:wrap}
+.stats span{background:var(--paper2);border:1px solid var(--line);border-radius:99px;padding:.4em 1.2em;font-size:.88em;color:#5a4a2a;box-shadow:0 2px 6px rgba(120,90,30,.06)}
+.stats b{color:var(--red);font-size:1.2em;margin-right:.25em}
+.actions{display:flex;justify-content:center;gap:.7em;margin-top:1.4em;flex-wrap:wrap}
+.actions #continueBox{flex-basis:100%;text-align:center;margin-bottom:.3em}
+.actions .btn{background:rgba(255,253,247,.92);border:1px solid var(--line);border-radius:10px;padding:.55em 1.3em;color:#7a3c0a;text-decoration:none;font-size:.92em;transition:.15s;box-shadow:0 2px 6px rgba(120,90,30,.08)}
+.actions .btn:hover{transform:translateY(-2px);border-color:#c8a86a;box-shadow:0 6px 14px rgba(120,80,20,.14)}
+.actions .continue{display:inline-block;background:linear-gradient(180deg,#b05018,#8a2a0a);color:#fdf3d8;font-weight:700;border:1px solid #6a1e06;letter-spacing:.08em;font-size:1em;padding:.65em 2em}
+.actions .continue:hover{filter:brightness(1.15)}
+.section{margin:2.2em 0}
+.sec-title{display:flex;align-items:baseline;gap:.8em;color:var(--accent);font-size:1.2em;letter-spacing:.14em;border-bottom:2px solid #e0d2b0;padding-bottom:.45em;margin-bottom:1.1em}
+.sec-title span{font-size:.78em;color:#a09070;letter-spacing:.08em;font-weight:400}
+.toclist{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:.8em;padding:0}
+.toclist a{display:flex;align-items:center;gap:.55em;background:var(--paper2);border:1px solid var(--line);border-radius:12px;padding:.6em .9em;color:#4a3c24;text-decoration:none;transition:.16s}
+.toclist a:hover{transform:translateY(-3px);box-shadow:0 8px 18px rgba(120,80,20,.14);border-color:#c8a86a;color:var(--red)}
+.toclist .no{font-size:.74em;color:#b09a6a;font-variant-numeric:tabular-nums}
+.toclist .pg{font-size:.72em;color:#b0a488;margin-left:auto;white-space:nowrap}
+.toclist li.read a{background:#f3ead6;border-color:#d8b878}
+.toclist li.read .no{color:#8a5a20}
+.toclist li.read a::after{content:'✓';color:#8a5a20;font-size:.9em;margin-left:.35em}
+@media (max-width:1000px){.toclist{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:760px){.toclist{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.toclist{grid-template-columns:1fr}.tocpage{padding-top:1.2em}}
+@media (max-width:640px){body{font-size:15.5px}.toolbar{font-size:.78em}}
+/* ===== 深色模式 ===== */
+[data-theme="dark"]{--ink:#e8e2d2;--paper:#1a1712;--paper2:#241f18;--line:#3a3328;--accent:#d8a05a;--dim:#9a9078;--red:#e8a070;--mark:#8a6a2a;--key:#a07028;--note:#221d15;--noteLine:#5a4a28}
+[data-theme="dark"] body{background:
+  radial-gradient(900px 420px at 12% -6%, rgba(60,45,15,.35), transparent 60%),
+  radial-gradient(800px 400px at 95% 0%, rgba(50,40,20,.3), transparent 55%),
+  var(--paper)}
+[data-theme="dark"] .seal{box-shadow:0 12px 28px rgba(0,0,0,.5)}
+[data-theme="dark"] mark{background:var(--mark);color:#f0e6c8}
+[data-theme="dark"] .key{background:linear-gradient(180deg,transparent 38%,var(--key) 38%);color:#ffd8a0}
+[data-theme="dark"] .note{background:var(--note);color:#c8bfa8}
+[data-theme="dark"] .toclist a,[data-theme="dark"] .stats span,[data-theme="dark"] .actions .btn{background:#1d1913;color:#d8d0ba}
+[data-theme="dark"] .toclist li.read a{background:#2a2418;border-color:#6a5a2a}
+[data-theme="dark"] h1,[data-theme="dark"] .bookhead h1{-webkit-background-clip:text;background-clip:text;color:transparent}
+/* ===== 打印 ===== */
+@media print{
+  .toolbar,.nav,.end,.actions,.bookmeta,.continue{display:none !important}
+  body{background:#fff !important;color:#000}
+  .wrap{max-width:none;padding:0}
+  h2.ch{page-break-after:avoid}
+  .note{page-break-inside:avoid}
+  p,blockquote{page-break-inside:avoid}
+}

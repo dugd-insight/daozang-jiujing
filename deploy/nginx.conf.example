@@ -1,0 +1,35 @@
+# 道藏九经 · Nginx 配置示例
+# 用法: 放到 /etc/nginx/conf.d/daozang.conf, 替换 8123 端口为 node 实际监听端口
+server {
+    listen 80;
+    server_name your-domain.com;   # 改为你的域名/IP
+
+    # 站点根 = node 服务的 site 目录 (或直接由 nginx 托管静态文件)
+    root /opt/daozang/site;
+    index index.html;
+
+    # gzip
+    gzip on;
+    gzip_types text/plain text/css application/javascript application/json image/svg+xml;
+    gzip_min_length 1024;
+
+    # 静态资源长缓存
+    location ~ ^/assets/ {
+        expires 365d;
+        add_header Cache-Control "public, immutable";
+    }
+    location ~ \.(svg|png|ico|woff2?|webmanifest)$ {
+        expires 30d;
+    }
+
+    # 页面不缓存
+    location / {
+        add_header Cache-Control "no-cache";
+        try_files $uri $uri/ /index.html;
+    }
+
+    # 安全头
+    add_header X-Content-Type-Options nosniff always;
+    add_header X-Frame-Options SAMEORIGIN always;
+    add_header Referrer-Policy no-referrer always;
+}

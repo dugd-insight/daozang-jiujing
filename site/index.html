@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>道教九经精校阅读 · 藏经阁</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<style>
+:root{--bg:#f6f0e3;--card:#fffdf7;--line:#e2d5b8;--ink:#2a241a;--dim:#8a7d63;--gold:#b8860b;--red:#8a2a0a;--deep:#3c2a12}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Songti SC","Noto Serif SC","SimSun","Microsoft YaHei",serif;
+  background:radial-gradient(900px 420px at 15% -5%,#f3e3bd 0%,transparent 60%),radial-gradient(700px 380px at 90% 0%,#e9dcc3 0%,transparent 55%),var(--bg);
+  color:var(--ink);min-height:100vh}
+.wrap{max-width:1080px;margin:0 auto;padding:2.2em 1.4em 4em}
+.hero{text-align:center;padding:1.4em 0 1.8em}
+.seal{display:inline-block;width:72px;height:72px;line-height:72px;border-radius:14px;background:linear-gradient(160deg,#8a2a0a,#c05a20);color:#f7e9c8;font-size:34px;box-shadow:0 10px 26px rgba(138,42,10,.28);margin-bottom:.7em;border:1px solid #6a1e06}
+.hero h1{font-size:2.3em;letter-spacing:.14em;background:linear-gradient(90deg,#5a3a10,#b8860b 45%,#8a2a0a);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .sub{color:var(--dim);font-size:.95em;margin-top:.5em;letter-spacing:.12em}
+.stats{display:flex;justify-content:center;gap:1.2em;margin-top:1.5em;flex-wrap:wrap}
+.stat{background:rgba(255,253,247,.85);border:1px solid var(--line);border-radius:12px;padding:.55em 1.2em;min-width:104px;box-shadow:0 4px 14px rgba(120,90,30,.08)}
+.stat b{display:block;font-size:1.35em;color:var(--red);letter-spacing:.05em}
+.stat span{font-size:.78em;color:var(--dim);letter-spacing:.1em}
+.cat{margin:2.2em 0 1em;display:flex;align-items:center;gap:.8em}
+.cat h2{font-size:1.25em;color:var(--deep);letter-spacing:.1em;white-space:nowrap}
+.cat::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+.cat .cn{font-size:.8em;color:var(--gold);letter-spacing:.2em}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1em}
+.card{position:relative;background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;transition:.22s;box-shadow:0 3px 12px rgba(120,90,30,.07)}
+.card:hover{transform:translateY(-5px);box-shadow:0 14px 32px rgba(120,80,20,.16);border-color:#c8a86a}
+.band{height:86px;position:relative;display:flex;align-items:flex-end;padding:.6em 1em;color:#fdf3d8;font-size:13px;letter-spacing:.06em}
+.band::after{content:"";position:absolute;inset:0;background:radial-gradient(120px 70px at 88% 18%,rgba(255,255,255,.22),transparent 70%)}
+.band .big{position:absolute;top:-6px;right:8px;font-size:56px;opacity:.85;filter:drop-shadow(0 3px 5px rgba(0,0,0,.25));z-index:1}
+.band .ch{position:relative;z-index:2;text-shadow:0 1px 3px rgba(0,0,0,.4)}
+.c1{background:linear-gradient(135deg,#7a2a08,#c05a20)}
+.c2{background:linear-gradient(135deg,#274a63,#3f7a9a)}
+.c3{background:linear-gradient(135deg,#4a3a1a,#8a6a2a)}
+.c4{background:linear-gradient(135deg,#5a1a2a,#9a3a4a)}
+.c5{background:linear-gradient(135deg,#20503a,#3a7a5a)}
+.c6{background:linear-gradient(135deg,#3a2a5a,#6a4a8a)}
+.c7{background:linear-gradient(135deg,#1c3a4a,#2e6a7a)}
+.c8{background:linear-gradient(135deg,#4a2a1a,#7a5230)}
+.c9{background:linear-gradient(135deg,#2a3a2a,#4a6a4a)}
+.body{padding:1em 1.1em 1.1em;display:flex;flex-direction:column;flex:1}
+.card h3{font-size:1.08em;color:var(--deep);letter-spacing:.02em;display:flex;align-items:center;gap:.45em;flex-wrap:wrap}
+.tag{font-size:.68em;background:#f0e6cf;color:#8a5a20;border:1px solid #dcc894;border-radius:99px;padding:.08em .6em;letter-spacing:.06em;white-space:nowrap}
+.card .desc{font-size:.82em;color:#5c5342;line-height:1.7;margin:.5em 0 .6em;min-height:2.7em}
+.meta{display:flex;gap:.5em;flex-wrap:wrap;margin-bottom:.8em}
+.meta span{font-size:.72em;background:#f5efe0;border:1px solid #e6d9b8;color:#7a6a48;border-radius:7px;padding:.15em .55em}
+.meta b{color:var(--red);font-weight:700}
+.actions{display:flex;align-items:center;justify-content:space-between;margin-top:auto;gap:.6em}
+.go{flex:1;text-align:center;text-decoration:none;color:#fdf3d8;background:linear-gradient(180deg,#8a2a0a,#a84810);border-radius:9px;padding:.5em 0;font-size:.9em;letter-spacing:.12em;box-shadow:0 3px 0 #5e1c06;transition:.15s}
+.go:hover{filter:brightness(1.15);transform:translateY(-1px)}
+.dls{display:flex;flex-direction:column;gap:.15em;font-size:.72em;text-align:right}
+.dls a{color:#8a6a2a;text-decoration:none;border-bottom:1px dotted #b8a070}
+.dls a:hover{color:var(--red)}
+.feats{display:grid;grid-template-columns:repeat(4,1fr);gap:1em;margin:2.6em 0 1.6em}
+.feat{background:rgba(255,253,247,.8);border:1px solid var(--line);border-radius:12px;padding:.9em 1em;text-align:center}
+.feat .ic{font-size:1.5em}
+.feat b{display:block;font-size:.9em;color:var(--deep);margin:.2em 0 .1em}
+.feat span{font-size:.75em;color:var(--dim);line-height:1.6;display:block}
+.foot{text-align:center;color:var(--dim);font-size:.8em;line-height:2;margin-top:1em;letter-spacing:.06em}
+@media (max-width:980px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:640px){.grid{grid-template-columns:1fr}.feats{grid-template-columns:repeat(2,1fr)}.hero h1{font-size:1.7em}.stats{gap:.6em}.stat{min-width:88px}}
+</style>
+<style>
+.hero-ctrl{position:absolute;top:14px;right:16px;display:flex;gap:8px;z-index:5}
+.hero-ctrl .hbtn{background:rgba(255,253,247,.9);border:1px solid var(--line);border-radius:9px;padding:.45em 1em;color:#7a3c0a;text-decoration:none;font-size:.85em;cursor:pointer;font-family:inherit}
+.hero-ctrl .hbtn:hover{border-color:#c8a86a}
+[data-theme="dark"]{--bg:#16130e;--card:#201b14;--line:#3a3328;--ink:#e8e2d2;--dim:#9a9078;--gold:#c8a05a;--red:#e8a070;--deep:#e0c8a0}
+[data-theme="dark"] body{background:radial-gradient(900px 420px at 15% -5%,rgba(90,60,20,.25),transparent 60%),radial-gradient(700px 380px at 90% 0%,rgba(70,50,20,.2),transparent 55%),var(--bg)}
+[data-theme="dark"] .card,[data-theme="dark"] .feat,[data-theme="dark"] .stat{background:#201b14}
+[data-theme="dark"] .tag,[data-theme="dark"] .meta span{background:#2a2418;color:#c8a05a}
+</style></head>
+<body>
+<div class="wrap">
+  <div class="hero-ctrl">
+  <a href="search.html" class="hbtn">🔍 搜索</a>
+  <button id="themeBtn" class="hbtn">🌙</button>
+</div>
+<div class="hero">
+    <div class="seal">☯</div>
+    <h1>道教九经 · 精校阅读</h1>
+    <p class="sub">道藏真经 · 简体繁体双版 · 历代修证祖师注解</p>
+    <div class="stats">
+      <div class="stat"><b>9</b><span>部经典</span></div>
+      <div class="stat"><b>160</b><span>章/篇</span></div>
+      <div class="stat"><b>350+</b><span>历代注解</span></div>
+      <div class="stat"><b>双版</b><span>简繁对照</span></div>
+    </div>
+  </div>
+
+  <div class="cat"><h2>丹道金丹</h2><span class="cn">参同契 · 悟真篇 · 金华宗旨 · 性命圭旨</span></div>
+  <div class="grid">
+    <div class="card"><div class="band c2"><span class="big">☯️</span><span class="ch">万古丹经王</span></div><div class="body">
+      <h3>周易参同契 <span class="tag">易理丹道</span></h3>
+      <p class="desc">魏伯阳以《易》卦象、黄老、炉火三家会通，乾坤坎离、纳甲火候、十二消息卦为丹道立纲纪。</p>
+      <div class="meta"><span>35 章</span><span><b>48</b> 段俞琰发挥</span><span>李筌·彭晓·朱熹等</span></div>
+      <div class="actions"><a class="go" href="cantongqi/index.html">在线阅读 →</a><div class="dls"><a href="cantongqi_simp.txt" download>下载简体</a><a href="cantongqi.txt" download>下载原文</a></div></div>
+    </div></div>
+    <div class="card"><div class="band c4"><span class="big">🔮</span><span class="ch">南宗祖经</span></div><div class="body">
+      <h3>悟真篇 <span class="tag">金丹诗词</span></h3>
+      <p class="desc">张伯端以诗词传丹诀：真铅真汞、取坎填离、戊己黄婆、依斗建火候，先命后性。</p>
+      <div class="meta"><span>三卷</span><span><b>25</b> 段注疏</span><span>翁葆光·戴起宗·陆墅</span></div>
+      <div class="actions"><a class="go" href="wuzhenpian/index.html">在线阅读 →</a><div class="dls"><a href="wuzhenpian_simp.txt" download>下载简体</a><a href="wuzhenpian.txt" download>下载原文</a></div></div>
+    </div></div>
+    <div class="card"><div class="band c1"><span class="big">⛏️</span><span class="ch">回光守中</span></div><div class="body">
+      <h3>太乙金华宗旨 <span class="tag">直提性功</span></h3>
+      <p class="desc">吕祖降乩：回光之功全用逆法，两目内照天心，凝先天太乙真炁，归于「一切处无心」。</p>
+      <div class="meta"><span>13 章</span><span><b>12</b> 段闵注</span><span>闵一得系统</span></div>
+      <div class="actions"><a class="go" href="jinhua/index.html">在线阅读 →</a><div class="dls"><a href="taiji_jinhua_zongzhi_simp.txt" download>下载简体</a><a href="taiji_jinhua_zongzhi.txt" download>下载原文</a></div></div>
+    </div></div>
+    <div class="card"><div class="band c6"><span class="big">🧭</span><span class="ch">性命双修</span></div><div class="body">
+      <h3>性命圭旨 <span class="tag">四集三十章</span></h3>
+      <p class="desc">尹真人高弟述：顺逆三关、三家相见、九鼎炼心、安神祖窍、移神内院，明清内丹总纲。</p>
+      <div class="meta"><span>30 章</span><span>四集元亨利贞</span><span>性命双修次第</span></div>
+      <div class="actions"><a class="go" href="xingming/index.html">在线阅读 →</a><div class="dls"><a href="xingming_guizhi_simp.txt" download>下载简体</a><a href="xingming_guizhi.txt" download>下载原文</a></div></div>
+    </div></div>
+  </div>
+
+  <div class="cat"><h2>身神 · 存思</h2><span class="cn">黄庭经</span></div>
+  <div class="grid">
+    <div class="card"><div class="band c5"><span class="big">🌌</span><span class="ch">存思内炼</span></div><div class="body">
+      <h3>黄庭经（内景·外景）<span class="tag">身神系统</span></h3>
+      <p class="desc">内景三十六章演身神之名与存思次第，外景三篇重固精炼气还返之道，历代注家逐句发明身位。</p>
+      <div class="meta"><span>36+3 篇</span><span><b>122</b> 处内嵌注</span><span>梁丘子·务成子·蒋国祚</span></div>
+      <div class="actions"><a class="go" href="huangting/index.html">在线阅读 →</a><div class="dls"><a href="huangting_jing_simp.txt" download>下载简体</a><a href="huangting_jing.txt" download>下载原文</a></div></div>
+    </div></div>
+  </div>
+
+  <div class="cat"><h2>玄理 · 修心</h2><span class="cn">南华真经 · 阴符经 · 坐忘论 · 清静经</span></div>
+  <div class="grid">
+    <div class="card"><div class="band c7"><span class="big">🦋</span><span class="ch">齐物逍遥</span></div><div class="body">
+      <h3>南华真经（庄子）<span class="tag">三十三篇</span></h3>
+
+[Showing lines 1-120 of 155. Use offset=121 to continue.]

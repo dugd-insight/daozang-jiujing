@@ -1,0 +1,13 @@
+{
+  "name": "daozang-jiujing",
+  "version": "1.0.0",
+  "description": "道教九经精校阅读站点 · 可独立部署（Node 零依赖）",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "build": "python3 scripts/generate_all.py",
+    "serve": "node server.js"
+  },
+  "engines": { "node": ">=16" },
+  "license": "MIT"
+}

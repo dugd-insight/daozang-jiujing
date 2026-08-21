@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>全文搜索 · 道教九经</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<style>
+:root{--ink:#23201a;--paper:#f8f3e8;--paper2:#fdfaf3;--line:#e2d5b8;--accent:#8a4a12;--dim:#7a7161;--red:#8a2a0a}
+[data-theme="dark"]{--ink:#e8e2d2;--paper:#1a1712;--paper2:#241f18;--line:#3a3328;--accent:#d8a05a;--dim:#9a9078;--red:#e8a070}
+*{box-sizing:border-box;margin:0;padding:0}
+body{margin:0;background:radial-gradient(900px 420px at 12% -6%,rgba(243,227,189,.5),transparent 60%),var(--paper);color:var(--ink);font-family:"Songti SC","Noto Serif SC","SimSun",serif;line-height:1.9}
+.toolbar{position:sticky;top:0;z-index:20;background:#26221a;color:#f5efe0;padding:.55em 1.1em;font-size:.88em;display:flex;gap:1em;align-items:center;box-shadow:0 2px 10px rgba(0,0,0,.35)}
+.toolbar .t{font-weight:700;color:#ffd98a}
+.toolbar a{color:#8fd0ff;text-decoration:none;border-bottom:1px dotted #8fd0ff}
+.wrap{max-width:46em;margin:0 auto;padding:2em 1.2em 4em}
+h1{text-align:center;font-size:1.8em;letter-spacing:.1em;color:var(--accent);margin-bottom:.3em}
+.sub{text-align:center;color:var(--dim);font-size:.88em;margin-bottom:1.6em}
+.box{display:flex;gap:.6em;margin-bottom:1.4em}
+#q{flex:1;padding:.8em 1em;font-size:1.05em;border:2px solid var(--line);border-radius:10px;background:var(--paper2);color:var(--ink);font-family:inherit;outline:none}
+#q:focus{border-color:var(--accent)}
+#go{padding:.8em 1.6em;font-size:1em;border:none;border-radius:10px;background:linear-gradient(180deg,#b05018,#8a2a0a);color:#fdf3d8;cursor:pointer;font-weight:700}
+#hint{color:var(--dim);font-size:.82em;margin-bottom:1.2em;text-align:center}
+.res-book{margin:1.4em 0 .6em;font-size:1.05em;color:var(--accent);border-bottom:2px solid var(--line);padding-bottom:.3em;letter-spacing:.06em}
+.res-item{background:var(--paper2);border:1px solid var(--line);border-radius:10px;padding:.7em 1em;margin:.5em 0}
+.res-item a{color:var(--ink);text-decoration:none;font-weight:700}
+.res-item a:hover{color:var(--red)}
+.res-item .meta{font-size:.78em;color:var(--dim);margin-top:.2em}
+.snip{font-size:.88em;color:var(--dim);margin-top:.3em;line-height:1.7}
+mark{background:#ffe08a;color:#7a1c06;padding:0 2px;border-radius:2px}
+[data-theme="dark"] mark{background:#8a6a2a;color:#fff}
+.empty{text-align:center;color:var(--dim);padding:2em 0}
+button#theme{background:#3a342a;color:#ffe9c0;border:1px solid #6a5a3a;border-radius:6px;padding:.3em .8em;cursor:pointer;margin-left:auto}
+</style>
+</head>
+<body data-theme="light">
+<div class="toolbar"><span class="t">☯ 道教九经</span><a href="index.html">← 藏经阁</a><a href="index.html">首页</a><button id="theme">🌙</button></div>
+<div class="wrap">
+  <h1>🔍 全文搜索</h1>
+  <p class="sub">九部经典 · 章节全文检索</p>
+  <div class="box"><input id="q" type="text" placeholder="输入关键词，如：回光 / 乾坤 / 逍遥 / 心斋 / 坐忘…" autocomplete="off"><button id="go">搜索</button></div>
+  <div id="hint">支持多关键词（空格分隔，全部命中才显示）；可搜章名与正文</div>
+  <div id="results"></div>
+</div>
+<script>
+var INDEX = null;
+var qEl = document.getElementById('q'), goEl = document.getElementById('go'), resEl = document.getElementById('results');
+function esc(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+function highlight(text, kws){
+  var t = esc(text);
+  kws.forEach(function(k){
+    var r = new RegExp('(' + k.replace(/[.*+?^${}()|[]\]/g, '\$&') + ')', 'g');
+    t = t.replace(r, '<mark>$1</mark>');
+  });
+  return t;
+}
+function snippet(text, kws){
+  var first = -1;
+  kws.forEach(function(k){ var i = text.indexOf(k); if(i >= 0 && (first < 0 || i < first)) first = i; });
+  if(first < 0) return text.slice(0, 80);
+  var s = Math.max(0, first - 30), e = Math.min(text.length, first + 70);
+  return (s > 0 ? '…' : '') + text.slice(s, e) + (e < text.length ? '…' : '');
+}
+function doSearch(){
+  var raw = qEl.value.trim();
+  var kws = raw.split(/\s+/).filter(Boolean);
+  if(!kws.length){ resEl.innerHTML = '<div class="empty">请输入关键词</div>'; return; }
+  if(!INDEX){ resEl.innerHTML = '<div class="empty">索引加载中…</div>'; return; }
+  var html = '', bookCount = 0, hitCount = 0;
+  INDEX.books.forEach(function(b){
+    var hits = b.chapters.filter(function(ch){
+      return kws.every(function(k){ return ch.title.indexOf(k) >= 0 || ch.text.indexOf(k) >= 0; });
+    });
+    if(!hits.length) return;
+    bookCount++; hitCount += hits.length;
+    html += '<div class="res-book">' + esc(b.title) + '</div>';
+    hits.forEach(function(ch){
+      html += '<div class="res-item"><a href="' + b.slug + '/' + ch.first + '">第' + ch.no + '章 · ' + esc(ch.title) + '</a>'
+        + '<div class="meta">' + ch.pages + ' 页</div>'
+        + '<div class="snip">' + highlight(snippet(ch.text, kws), kws) + '</div></div>';
+    });
+  });
+  resEl.innerHTML = html || '<div class="empty">未找到包含「' + esc(kws.join(' ')) + '」的章节</div>';
+  document.getElementById('hint').textContent = hitCount ? ('命中 ' + hitCount + ' 章 · 分布于 ' + bookCount + ' 部经典') : '支持多关键词（空格分隔，全部命中才显示）；可搜章名与正文';
+}
+goEl.onclick = doSearch;
+qEl.addEventListener('keydown', function(e){ if(e.key === 'Enter') doSearch(); });
+qEl.addEventListener('input', function(){ if(qEl.value.trim().length >= 2) doSearch(); });
+fetch('search-index.json').then(function(r){ return r.json(); }).then(function(d){ INDEX = d; });
+var th = document.getElementById('theme');
+var dark = localStorage.getItem('gj-theme') === 'dark';
+function applyTheme(){ document.body.setAttribute('data-theme', dark ? 'dark' : 'light'); th.textContent = dark ? '☀️' : '🌙'; }
+th.onclick = function(){ dark = !dark; localStorage.setItem('gj-theme', dark ? 'dark' : 'light'); applyTheme(); };
+applyTheme();
+</script>
+</body>
+</html>

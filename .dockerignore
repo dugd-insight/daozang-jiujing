@@ -1,0 +1,5 @@
+node_modules
+.git
+.dsh_better_edit
+deploy
+*.md

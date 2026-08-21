@@ -1,0 +1,183 @@
+{
+ "kind": "article",
+ "title": "坐忘论（七篇及坐忘枢翼）",
+ "summary": "司马承祯《坐忘论》承庄子坐忘之旨，立敬信、断缘、收心、简事、真观、泰定、得道七阶，系统构建了上清派由渐修至顿证的修心次第，并附坐忘枢翼总结戒行要诀。",
+ "thesis": "修道之要在于以敬信为根，依次断缘、收心、简事、真观，在去执守静中入于泰定，使本性慧光自现而不妄用，终达黜聪堕体、形神合一的得道境界。",
+ "arguments": [
+  {
+   "claim": "敬信是修道之基，信为道根、敬为德蒂。",
+   "evidence": "原文将信比作根、敬比作蒂，根深则道可长，蒂固则德可茂；对坐忘之言敬仰尊重、决定无疑，加之勤行，得道必矣。",
+   "quote": "夫信者道之根，敬者德之蒂，根深則道可長，蒂固則德可茂。",
+   "source": ""
+  },
+  {
+   "claim": "断缘是断绝有为俗事之缘，使形不劳、心自安。",
+   "evidence": "弃事则形不劳，无为则心自安；显德露能、庆吊往还、假隐逸、酒食邀致等巧蕴机心之事，皆应绝之，使旧缘渐断、新缘莫结。",
+   "quote": "棄事則形不勞，無為則心自安，恬簡日就，塵累日薄，邊彌遠俗，心彌近道",
+   "source": ""
+  },
+  {
+   "claim": "收心以安坐、离境、住于无所有为诀，但不可执空成病。",
+   "evidence": "心为身主，静则生慧、动则成昏；要收心离境、不著一物以合道，同时须‘息乱而不灭照，守静而不著空’，避免盲定、任心与断善等偏颇。",
+   "quote": "息亂而不滅照，守靜而不著空，行之有常，自得真見。",
+   "source": ""
+  },
+  {
+   "claim": "简事即知分识当，去除非要非重的分外之物。",
+   "evidence": "修道之人莫若断简事物，知生之有分，不务分之所无；酒肉罗绮、名位金玉皆情欲余好，蔬食弊衣足养性命。",
+   "quote": "知生之有分，不務分之所無，識事之有當，不任事之非當。",
+   "source": ""
+  },
+  {
+   "claim": "真观是以智观照，对色、贫、病等苦皆观其空妄、乐天知命。",
+   "evidence": "色由想生，想若不生则无色事；贫病皆自业天命，不可逃怨，当如勇士挥剑般以智观察、消除恼累；若恋生恶死则神识错乱。",
+   "quote": "當知色想外空，色心內妄，妄想心空，誰為色主？",
+   "source": ""
+  },
+  {
+   "claim": "泰定是致道初基，定极发慧且慧而不用，最终达到形神合一的得道之境。",
+   "evidence": "泰定时形如槁木、心若死灰，无心于定而无所不定，慧出本性而须宝而不用；得道者心有五时、身有七候，形神合同则能长久。",
+   "quote": "宇泰定者，發乎天光。",
+   "source": ""
+  }
+ ],
+ "quotes": [
+  {
+   "text": "夫坐忘者，何所不忘哉。內不覺其一身，外不知乎宇宙，與道冥一，萬慮皆遺。",
+   "context": "界定坐忘的内外双遣、与道合一之义。",
+   "source": ""
+  },
+  {
+   "text": "唯滅動心，不滅照心，但冥虛心，不冥有心，不依一物，而心常住。",
+   "context": "说明修定中灭心与照心的关系，为坐忘枢翼要诀。",
+   "source": ""
+  },
+  {
+   "text": "慧而不用，實智若愚，益資定慧，雙美無極。",
+   "context": "强调泰定发慧后不滥用慧，以定养慧。",
+   "source": ""
+  },
+  {
+   "text": "山有玉，草木以之不彫。人懷道，形骸以之永固。",
+   "context": "以玉喻道，说明怀道能固形长生。",
+   "source": ""
+  }
+ ],
+ "concepts": [
+  {
+   "term": "坐忘",
+   "explanation": "源出庄子，内不觉一身、外不知宇宙，离形去智、黜聪堕体，与道冥一、万虑皆遗的境界。"
+  },
+  {
+   "term": "收心",
+   "explanation": "安坐离境、住无所有，不著一物，息乱守静而不著空的修心功夫。"
+  },
+  {
+   "term": "真观",
+   "explanation": "以智观照物我，观色、贫、病等皆空妄，乐天知命、不恋生死的内省方法。"
+  },
+  {
+   "term": "泰定",
+   "explanation": "无心于定而无所不定，虚静至极则道居慧生，为致道初基。"
+  },
+  {
+   "term": "五时七候",
+   "explanation": "得道之人在心上经历动多静少至触而不动的五个阶段，身上依次显现容色和悦至炼神合道的七种证候。"
+  }
+ ],
+ "questions": [
+  "[object Object]",
+  "[object Object]",
+  "[object Object]"
+ ],
+ "structure": [],
+ "chapters": [],
+ "citations": [],
+ "meta": {
+  "source": "/root/dugd_8/zuowanglun.txt",
+  "sourceKind": "file",
+  "chars": 6956,
+  "chunks": 1,
+  "depth": "deep",
+  "estimate": {
+   "chars": 6956,
+   "modes": [
+    {
+     "mode": "quick",
+     "note": "单次调用，输入截断至 30000 字",
+     "calls": 1,
+     "inputTokens": 4767,
+     "outputTokens": 2500,
+     "totalTokens": 7267,
+     "minutes": 3.7,
+     "minutesFormula": "（(4767+2500) ÷ 33.3 tok/s + 1 次 × 680ms）",
+     "estTokensPerSecond": 33.3,
+     "estLatencyPerCallMs": 680,
+     "calibrated": true
+    },
+    {
+     "mode": "deep",
+     "note": "短文单次调用",
+     "calls": 1,
+     "inputTokens": 4767,
+     "outputTokens": 4000,
+     "totalTokens": 8767,
+     "minutes": 4.4,
+     "minutesFormula": "（(4767+4000) ÷ 33.3 tok/s + 1 次 × 680ms）",
+     "estTokensPerSecond": 33.3,
+     "estLatencyPerCallMs": 680,
+     "calibrated": true
+    },
+    {
+     "mode": "book",
+     "note": "全书分 2 部分精读并汇总",
+     "calls": 3,
+     "inputTokens": 9788,
+     "outputTokens": 15000,
+     "totalTokens": 24788,
+     "minutes": 12.5,
+     "minutesFormula": "（(9788+15000) ÷ 33.3 tok/s + 3 次 × 680ms）",
+     "estTokensPerSecond": 33.3,
+     "estLatencyPerCallMs": 680,
+     "calibrated": true
+    },
+    {
+     "mode": "map",
+     "note": "短文单次知识地图",
+     "calls": 1,
+     "inputTokens": 4767,
+     "outputTokens": 5000,
+     "totalTokens": 9767,
+     "minutes": 4.9,
+     "minutesFormula": "（(4767+5000) ÷ 33.3 tok/s + 1 次 × 680ms）",
+     "estTokensPerSecond": 33.3,
+     "estLatencyPerCallMs": 680,
+     "calibrated": true
+    },
+    {
+     "mode": "feynman",
+     "note": "分 2 章 + 合并导图与复习计划 1 次",
+     "calls": 3,
+     "inputTokens": 9788,
+     "outputTokens": 15000,
+     "totalTokens": 24788,
+     "minutes": 12.5,
+     "minutesFormula": "（(9788+15000) ÷ 33.3 tok/s + 3 次 × 680ms）",
+     "estTokensPerSecond": 33.3,
+     "estLatencyPerCallMs": 680,
+     "calibrated": true
+    }
+   ],
+   "estTokensPerSecond": 33.3,
+   "estLatencyPerCallMs": 680,
+   "calibrated": true
+  },
+  "durationMs": 140885,
+  "stages": {
+   "resolveMs": 3,
+   "extractMs": 0,
+   "llmMs": 140884,
+   "calls": 1
+  }
+ }
+}
